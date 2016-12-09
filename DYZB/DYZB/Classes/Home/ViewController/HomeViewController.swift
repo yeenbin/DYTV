@@ -8,39 +8,60 @@
 
 import UIKit
 
+private let kTitleViewH : CGFloat = 40
+
 class HomeViewController: UIViewController {
 
+    //MARK: - 懒加载属性
+    fileprivate lazy var pageTitleView : PageTitleView = {
+        let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
+        let titles = ["推荐","游戏","娱乐","趣玩"]
+        let titleView = PageTitleView(frame: titleFrame, isScrollEnable: true, titles: titles)
+        titleView.delegate = self
+        return titleView
+    }()
+    
+    fileprivate lazy var pageContenView : PageContenView = {
+        //0.确定内容的frame
+        let contenH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabbarH
+        let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contenH)
+        
+        var childVcs = [UIViewController]()
+        
+        childVcs.append(RecommendViewController())
+        childVcs.append(GameViewController())
+        childVcs.append(AmuseViewController())
+        childVcs.append(FunnyViewController())
+        
+        let contentView = PageContenView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        contentView.delegate = self
+        return contentView
+    }()
+    
+    //MARK: -控制器生命周期函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //1.初始化导航栏
         setupNavigationBar()
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 //MARK - 设置到导航栏内容
 extension HomeViewController {
     
     fileprivate func setupNavigationBar(){
+        //不需要调整
+        automaticallyAdjustsScrollViewInsets = false
+        
         setupNavigationLeftBar()
         setupNavigationRightBar()
+    
+        //添加titleView
+        view.addSubview(pageTitleView)
+        
+        //添加contentView
+        view.addSubview(pageContenView)
     }
     
     //创建左边的按钮
@@ -88,7 +109,19 @@ extension HomeViewController {
     }
 }
 
+//MARK: - 遵循PageTitleViewDelegate的方法实现
+extension HomeViewController : PageTitleViewDelegate {
+    func pageTitleView(_ titleView: PageTitleView, selectedIndex index: Int) {
+        pageContenView.setCurrentIndex(index)
+    }
+}
 
+//MARK: - 遵循PageContenViewDelegate的方法实现
+extension HomeViewController : pageContenViewDelegate {
+    func pageContenView(_ contenView: PageContenView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+}
 //最low的方式创建导航栏的方法
 /*
 extension HomeViewController {
