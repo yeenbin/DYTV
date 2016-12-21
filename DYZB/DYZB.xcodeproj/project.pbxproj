@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3412CB6D38017E83E853DE52 /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A319E24EDD779EEC8C8AFEA /* Pods_DYZB.framework */; };
 		AF01391E1DDD51650042E2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01391D1DDD51650042E2D0 /* AppDelegate.swift */; };
 		AF0139201DDD51650042E2D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01391F1DDD51650042E2D0 /* ViewController.swift */; };
 		AF0139281DDD51650042E2D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF0139261DDD51650042E2D0 /* LaunchScreen.storyboard */; };
 		AF0139331DDD51650042E2D0 /* DYZBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0139321DDD51650042E2D0 /* DYZBTests.swift */; };
 		AF01393E1DDD51650042E2D0 /* DYZBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF01393D1DDD51650042E2D0 /* DYZBUITests.swift */; };
+		AF4063B31E09092E00F9EEEE /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4063B21E09092E00F9EEEE /* RecommendViewModel.swift */; };
+		AF4063B51E090BFA00F9EEEE /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4063B41E090BFA00F9EEEE /* AnchorModel.swift */; };
+		AF4063B71E091D1000F9EEEE /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4063B61E091D1000F9EEEE /* AnchorGroup.swift */; };
+		AF4063B91E09272400F9EEEE /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4063B81E09272400F9EEEE /* GameModel.swift */; };
+		AF58139B1DFFA1EB0074B648 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5813991DFFA1EB0074B648 /* CollectionHeaderView.swift */; };
+		AF58139C1DFFA1EB0074B648 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF58139A1DFFA1EB0074B648 /* CollectionHeaderView.xib */; };
 		AF5EB1371DF9612500B8677C /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EB1361DF9612500B8677C /* RecommendViewController.swift */; };
 		AF5EB1391DF9616100B8677C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EB1381DF9616100B8677C /* GameViewController.swift */; };
 		AF5EB13B1DF9618C00B8677C /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5EB13A1DF9618C00B8677C /* AmuseViewController.swift */; };
@@ -29,6 +36,7 @@
 		AFC139C01DF502F2006DA600 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC139BF1DF502F2006DA600 /* UIColor-Extension.swift */; };
 		AFC139C21DF53FD5006DA600 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC139C11DF53FD5006DA600 /* Common.swift */; };
 		AFDA1A411DF016D4001EAF71 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDA1A401DF016D4001EAF71 /* UIBarButtonItem-Extension.swift */; };
+		AFF0A65E1E08DCE100207EC7 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0A65D1E08DCE100207EC7 /* NetworkTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A319E24EDD779EEC8C8AFEA /* Pods_DYZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		833505F804AC29F2F1F299F4 /* Pods-DYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.debug.xcconfig"; sourceTree = "<group>"; };
 		AF01391A1DDD51650042E2D0 /* DYZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF01391D1DDD51650042E2D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF01391F1DDD51650042E2D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +70,13 @@
 		AF0139391DDD51650042E2D0 /* DYZBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYZBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF01393D1DDD51650042E2D0 /* DYZBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DYZBUITests.swift; sourceTree = "<group>"; };
 		AF01393F1DDD51650042E2D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF32605D1986902C249A9B37 /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
+		AF4063B21E09092E00F9EEEE /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		AF4063B41E090BFA00F9EEEE /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		AF4063B61E091D1000F9EEEE /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
+		AF4063B81E09272400F9EEEE /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		AF5813991DFFA1EB0074B648 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		AF58139A1DFFA1EB0074B648 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
 		AF5EB1361DF9612500B8677C /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		AF5EB1381DF9616100B8677C /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AF5EB13A1DF9618C00B8677C /* AmuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +94,7 @@
 		AFC139BF1DF502F2006DA600 /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		AFC139C11DF53FD5006DA600 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		AFDA1A401DF016D4001EAF71 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		AFF0A65D1E08DCE100207EC7 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3412CB6D38017E83E853DE52 /* Pods_DYZB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +123,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37692D3BD498255356166AC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A319E24EDD779EEC8C8AFEA /* Pods_DYZB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F972CEC84A7C7BBB8750603 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				833505F804AC29F2F1F299F4 /* Pods-DYZB.debug.xcconfig */,
+				AF32605D1986902C249A9B37 /* Pods-DYZB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AF0139111DDD51640042E2D0 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +147,8 @@
 				AF0139311DDD51650042E2D0 /* DYZBTests */,
 				AF01393C1DDD51650042E2D0 /* DYZBUITests */,
 				AF01391B1DDD51650042E2D0 /* Products */,
+				5F972CEC84A7C7BBB8750603 /* Pods */,
+				37692D3BD498255356166AC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +272,7 @@
 				AFDA1A401DF016D4001EAF71 /* UIBarButtonItem-Extension.swift */,
 				AFC139BF1DF502F2006DA600 /* UIColor-Extension.swift */,
 				AFC139C11DF53FD5006DA600 /* Common.swift */,
+				AFF0A65D1E08DCE100207EC7 /* NetworkTools.swift */,
 			);
 			name = "Tools(工具)";
 			path = Tools;
@@ -271,6 +310,9 @@
 		AF8701DF1DEECF3D003B8806 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF4063B41E090BFA00F9EEEE /* AnchorModel.swift */,
+				AF4063B61E091D1000F9EEEE /* AnchorGroup.swift */,
+				AF4063B81E09272400F9EEEE /* GameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +320,8 @@
 		AF8701E01DEECF3D003B8806 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AF5813991DFFA1EB0074B648 /* CollectionHeaderView.swift */,
+				AF58139A1DFFA1EB0074B648 /* CollectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +342,7 @@
 		AF8701E21DEECF3D003B8806 /* ViweModel */ = {
 			isa = PBXGroup;
 			children = (
+				AF4063B21E09092E00F9EEEE /* RecommendViewModel.swift */,
 			);
 			path = ViweModel;
 			sourceTree = "<group>";
@@ -399,9 +444,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF0139421DDD51650042E2D0 /* Build configuration list for PBXNativeTarget "DYZB" */;
 			buildPhases = (
+				0F950E5C45B6CD9803845C90 /* [CP] Check Pods Manifest.lock */,
 				AF0139161DDD51640042E2D0 /* Sources */,
 				AF0139171DDD51640042E2D0 /* Frameworks */,
 				AF0139181DDD51640042E2D0 /* Resources */,
+				3D419CE1F2E63E2A8A6ABE2F /* [CP] Embed Pods Frameworks */,
+				9231756E07FB0C3F3692510C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -500,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF908EDB1DDD828D00001486 /* Main.storyboard in Resources */,
+				AF58139C1DFFA1EB0074B648 /* CollectionHeaderView.xib in Resources */,
 				AF0139281DDD51650042E2D0 /* LaunchScreen.storyboard in Resources */,
 				AF908ED81DDD7F8700001486 /* Assets.xcassets in Resources */,
 				AF8701EE1DEED17E003B8806 /* Live.storyboard in Resources */,
@@ -525,6 +574,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F950E5C45B6CD9803845C90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3D419CE1F2E63E2A8A6ABE2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYZB/Pods-DYZB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9231756E07FB0C3F3692510C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYZB/Pods-DYZB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF0139161DDD51640042E2D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -532,17 +629,23 @@
 			files = (
 				AFC139C21DF53FD5006DA600 /* Common.swift in Sources */,
 				AF6BBD471DF11E2000E728E7 /* PageTitleView.swift in Sources */,
+				AFF0A65E1E08DCE100207EC7 /* NetworkTools.swift in Sources */,
 				AFDA1A411DF016D4001EAF71 /* UIBarButtonItem-Extension.swift in Sources */,
 				AF8701F81DEED31B003B8806 /* MainViewController.swift in Sources */,
 				AF0139201DDD51650042E2D0 /* ViewController.swift in Sources */,
+				AF4063B71E091D1000F9EEEE /* AnchorGroup.swift in Sources */,
 				AF01391E1DDD51650042E2D0 /* AppDelegate.swift in Sources */,
 				AF5EB13B1DF9618C00B8677C /* AmuseViewController.swift in Sources */,
 				AFC139C01DF502F2006DA600 /* UIColor-Extension.swift in Sources */,
+				AF4063B91E09272400F9EEEE /* GameModel.swift in Sources */,
+				AF4063B31E09092E00F9EEEE /* RecommendViewModel.swift in Sources */,
 				AF8701FA1DEED37C003B8806 /* HomeViewController.swift in Sources */,
 				AFBCE47D1DF5643B00A3B876 /* PageContenView.swift in Sources */,
 				AF5EB1391DF9616100B8677C /* GameViewController.swift in Sources */,
+				AF58139B1DFFA1EB0074B648 /* CollectionHeaderView.swift in Sources */,
 				AF5EB13D1DF961A900B8677C /* FunnyViewController.swift in Sources */,
 				AF5EB1371DF9612500B8677C /* RecommendViewController.swift in Sources */,
+				AF4063B51E090BFA00F9EEEE /* AnchorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +796,7 @@
 		};
 		AF0139431DDD51650042E2D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 833505F804AC29F2F1F299F4 /* Pods-DYZB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -707,6 +811,7 @@
 		};
 		AF0139441DDD51650042E2D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF32605D1986902C249A9B37 /* Pods-DYZB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
