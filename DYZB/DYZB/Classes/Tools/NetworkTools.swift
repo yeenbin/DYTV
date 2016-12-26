@@ -22,7 +22,7 @@ class NetworkTools {
 
 // MARK: - 封装请求方法
 extension NetworkTools {
-    class func requestData(_ type : MethodType, urlString : String, parameters:[String : AnyObject], finishedCallback : @escaping (_ result : Any) -> ()) {
+    class func requestData(_ type : MethodType, urlString : String, parameters:[String : Any]? = nil, finishedCallback : @escaping (_ result : Any) -> ()) {
         
         //1.判断请求的方式
         let method = type == .GET ? Alamofire.HTTPMethod.get : Alamofire.HTTPMethod.post

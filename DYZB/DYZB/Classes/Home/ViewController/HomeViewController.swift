@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
         childVcs.append(FunnyViewController())
         
         let contentView = PageContenView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+    
         contentView.delegate = self
         return contentView
     }()
