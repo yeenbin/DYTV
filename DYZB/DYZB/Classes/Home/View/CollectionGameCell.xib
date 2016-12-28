@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="DYZB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e13-nD-1ce">
+                        <rect key="frame" x="18" y="15" width="45" height="45"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="HKH-3p-mHO"/>
+                            <constraint firstAttribute="width" constant="45" id="J0l-oW-dtL"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kb4-Xe-JvD">
+                        <rect key="frame" x="16" y="65" width="50" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MS0-zF-MUy">
+                        <rect key="frame" x="0.0" y="90" width="80" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="bao-Zw-K35"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="e13-nD-1ce" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-8" id="0gH-4u-MxY"/>
+                <constraint firstItem="MS0-zF-MUy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CV2-ad-cLR"/>
+                <constraint firstItem="Kb4-Xe-JvD" firstAttribute="top" secondItem="e13-nD-1ce" secondAttribute="bottom" constant="5" id="Ll2-18-B2b"/>
+                <constraint firstItem="Kb4-Xe-JvD" firstAttribute="centerX" secondItem="e13-nD-1ce" secondAttribute="centerX" id="Q89-hw-cu0"/>
+                <constraint firstItem="e13-nD-1ce" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ccz-Qs-V5K"/>
+                <constraint firstAttribute="bottom" secondItem="MS0-zF-MUy" secondAttribute="bottom" constant="-1" id="oo6-w5-PcY"/>
+                <constraint firstAttribute="trailing" secondItem="MS0-zF-MUy" secondAttribute="trailing" id="tyr-Ov-9UM"/>
+            </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="e13-nD-1ce" id="Rha-RT-VyK"/>
+                <outlet property="titleLabel" destination="Kb4-Xe-JvD" id="RoI-rz-DQV"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

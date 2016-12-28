@@ -10,6 +10,7 @@ import UIKit
 
 class RecommendViewModel: BaseViewModel {
     //MARK: - 懒加载属性
+    lazy var cycleModels : [CycleModel] = [CycleModel]()
     ///大数据主播群数据
     fileprivate lazy var bigDataGroup : AnchorGroup = AnchorGroup()
     ///颜值主播群数据
@@ -85,6 +86,12 @@ extension RecommendViewModel {
             group.leave()
         }
         
+        //5.请求部分游戏的数据
+        group.enter()
+        loadAnchorData(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) {
+            group.leave()
+        }
+        
         //6.所有的数据请求完毕 做排序处理
         group.notify(queue: DispatchQueue.main) { 
             self.anchorGroups.insert(self.prettyGroup, at: 0)
@@ -98,6 +105,23 @@ extension RecommendViewModel {
     ///
     /// - Parameter finishCallBack: 请求完毕后的回调
     func requestCycleData(_ finishCallBack : @escaping () -> ()){
+        NetworkTools.requestData(.GET, urlString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
+            //1.获取整体字典数据
+            guard let resultDic = result as? [String : NSObject] else {
+                return
+            }
+            
+            //2.根据data的key取出数据
+            guard let dataArray = resultDic["data"] as? [[String : NSObject]] else{
+                return
+            }
         
+            //3.字典转模型
+            for dict in dataArray {
+                self.cycleModels.append(CycleModel(dic: dict))
+            }
+            
+            finishCallBack()
+        }
     }
 }

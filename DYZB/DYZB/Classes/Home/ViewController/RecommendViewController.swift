@@ -19,11 +19,27 @@ let kNormalItemW = (kScreenW - 3 * kItemMargin) / 2
 let kNormalItemH = kNormalItemW * 3 / 4
 let kPrettyItemH = kNormalItemW * 4 / 3
 
+let kCycleH = kScreenW * 3 / 8
+let kGameH : CGFloat = 90
+
 
 class RecommendViewController: UIViewController {
     
     //MARK:- 懒加载属性
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    
+    fileprivate lazy var cycleView : RecommendCycleView = {
+       let cycleView = RecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -(kCycleH + kGameH), width: kScreenW, height: kCycleH)
+        return cycleView
+    }()
+    
+    fileprivate lazy var gameView : RecommendGameView = {
+       let gameView = RecommendGameView.recommendGameView()
+        gameView.backgroundColor = UIColor.red
+        gameView.frame = CGRect(x: 0, y: -kGameH, width: kScreenW, height: kGameH)
+        return gameView
+    }()
     
     lazy var collectionView : UICollectionView = { [unowned self] in
         let layout = UICollectionViewFlowLayout()
@@ -38,6 +54,7 @@ class RecommendViewController: UIViewController {
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         ///注册单元格的nib文件
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
@@ -81,7 +98,15 @@ extension RecommendViewController {
     fileprivate func  setupUI() {
        
         view.addSubview(collectionView)
-
+        
+        //1.将cycleView添加到collectionView上
+        collectionView.addSubview(cycleView)
+        
+        //2.将gameVie添加到collectionView上
+        collectionView.addSubview(gameView)
+    
+        //3.设置collectionView的内边距
+        collectionView.contentInset = UIEdgeInsets(top: kCycleH + kGameH , left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -92,6 +117,27 @@ extension RecommendViewController{
         recommendVM.requestData {
             
             self.collectionView.reloadData()
+            
+            //将数据传递给gameView
+            var groups = self.recommendVM.anchorGroups
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            let moreGroup = AnchorGroup()
+            moreGroup.tag_name = "更多"
+            groups.append(moreGroup)
+            
+            for AnchorGroup in groups {
+                print(AnchorGroup.tag_name)
+            }
+            
+            
+            self.gameView.groups = groups
+        }
+        
+        //2.请求无线轮播的数据
+        recommendVM.requestCycleData {
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
         }
     }
 }
