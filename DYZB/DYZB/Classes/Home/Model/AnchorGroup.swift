@@ -9,7 +9,7 @@
 import UIKit
 
 class AnchorGroup: BaseGameModel {
-
+    
     var room_list : [[String : NSObject]]? {
         didSet{
             guard let room_list = room_list else {

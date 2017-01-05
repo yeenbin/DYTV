@@ -14,10 +14,6 @@ private let kHeaderViewH : CGFloat = 50
 private let kNormalCellID = "kNormalCellID"
 private let kHeaderViewID = "kHeaderViewID"
 
-let kPrettyCellID = "kPrettyCellID"
-let kNormalItemW = (kScreenW - 3 * kItemMargin) / 2
-let kNormalItemH = kNormalItemW * 3 / 4
-let kPrettyItemH = kNormalItemW * 4 / 3
 
 let kCycleH = kScreenW * 3 / 8
 let kGameH : CGFloat = 90
@@ -67,17 +63,11 @@ class RecommendViewController: UIViewController {
         return collectionView
     }()
     
-//    fileprivate lazy var topHeaderView : CollectionHeaderView = {
-//        let headerView = CollectionHeaderView.collectionHeaderView()
-//        headerView.frame = CGRect(x: 0, y: 0, width: kScreenW, height: kHeaderViewH)
-//        headerView.titleLabel.text = "常见"
-//        headerView.iconImageView.image =  UIImage(named: "Img_orange")
-//        return headerView
-//    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // view.backgroundColor = UIColor().randomColor()
+         view.backgroundColor = UIColor.lightGray
        //MARK: - 懒加载属性
         
         
@@ -126,11 +116,6 @@ extension RecommendViewController{
             let moreGroup = AnchorGroup()
             moreGroup.tag_name = "更多"
             groups.append(moreGroup)
-            
-            for AnchorGroup in groups {
-                print(AnchorGroup.tag_name)
-            }
-            
             
             self.gameView.groups = groups
         }
